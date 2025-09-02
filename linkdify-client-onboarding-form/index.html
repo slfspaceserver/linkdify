@@ -1,1 +1,348 @@
-h
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkdify Client Onboarding</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f9f9f9);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 16px;
+      max-width: 900px;
+      width: 100%;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      animation: fadeUp 0.8s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #0073b1;
+    }
+
+    .header h2 span {
+      color: #111;
+    }
+
+    .section {
+      background: #f9fbfc;
+      border: 1px solid #e0e6ed;
+      border-radius: 14px;
+      padding: 20px 25px;
+      margin-bottom: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .section:hover {
+      border-color: #0073b1;
+      box-shadow: 0 6px 15px rgba(0,115,177,0.1);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #005582;
+    }
+
+    .section-title i {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #0073b1;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    .form-group input, 
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #cbd6e2;
+      border-radius: 10px;
+      font-size: 14px;
+      background: white;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-group input:focus, 
+    .form-group textarea:focus {
+      border-color: #0073b1;
+      box-shadow: 0 0 6px rgba(0,115,177,0.2);
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    /* Drag & Drop File Upload */
+    .file-drop {
+      border: 2px dashed #0073b1;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      cursor: pointer;
+      background: #f0f8fc;
+      transition: background 0.3s ease;
+    }
+
+    .file-drop:hover {
+      background: #e4f5fc;
+    }
+
+    .file-drop i {
+      font-size: 28px;
+      color: #0073b1;
+      margin-bottom: 8px;
+    }
+
+    .file-drop span {
+      display: block;
+      font-size: 14px;
+      color: #444;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #0073b1, #00c6ff);
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+    }
+
+    .success-message {
+      text-align: center;
+      color: #2e7d32;
+      font-weight: 600;
+      margin-top: 15px;
+      display: none;
+    }
+  </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <h2 ><span>Link</span>dify Client Onboarding</h2>
+      </div>
+      <form id="onboardingForm"
+        action="https://bygrovix.com/api/linkdify/v1/form/client-onboarding"
+        method="post" enctype="multipart/form-data">
+
+        <div class="section">
+          <div class="section-title"><i class="fa-solid fa-user"></i> Basic
+            Details</div>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Company / Project Name</label>
+            <input type="text" id="company" name="company">
+          </div>
+          <div class="form-group">
+            <label for="website">Website (if any)</label>
+            <input type="url" id="website" name="website">
+          </div>
+          <div class="form-group">
+            <label for="email">Best Contact Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title"><i class="fa-solid fa-lightbulb"></i> Brand
+            Vision</div>
+          <div class="form-group">
+            <label for="vision">What is your vision for your company?</label>
+            <textarea id="vision" name="vision" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="problem">What problem are you solving in the
+              market?</label>
+            <textarea id="problem" name="problem"></textarea>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title"><i class="fa-solid fa-users"></i> Audience
+            & Positioning</div>
+          <div class="form-group">
+            <label for="audience">Who is your target audience?</label>
+            <textarea id="audience" name="audience"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="markets">Which regions or markets matter most to
+              you?</label>
+            <textarea id="markets" name="markets"></textarea>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title"><i class="fa-solid fa-bullseye"></i> Goals
+            & Priorities</div>
+          <div class="form-group">
+            <label for="goals">What are your top 3 goals for the next 6
+              months?</label>
+            <textarea id="goals" name="goals" required></textarea>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title"><i class="fa-solid fa-paint-brush"></i>
+            Style & Preferences</div>
+          <div class="form-group">
+            <label for="style">How do you want your brand to be seen?</label>
+            <textarea id="style" name="style"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="competitors">Any specific brands or competitors you
+              admire?</label>
+            <textarea id="competitors" name="competitors"></textarea>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title"><i class="fa-solid fa-folder-open"></i>
+            Assets & Contact</div>
+          <div class="form-group">
+            <label for="assets">Do you already have brand assets? (logo, brand
+              kit, photos)</label>
+            <textarea id="assets" name="assets"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Upload Brand Assets (optional)</label>
+            <div class="file-drop" id="fileDrop">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              <span>Drag & drop files here or click to upload</span>
+              <input type="file" id="attachments" name="attachments" multiple
+                hidden>
+            </div>
+            <!-- ✅ File name list container -->
+            <div id="fileList"
+              style="margin-top:10px; font-size:14px; color:#333;"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact">Who will be our main point of contact from your
+              team?</label>
+            <input type="text" id="contact" name="contact">
+          </div>
+        </div>
+
+        <button type="submit"><i class="fa-solid fa-paper-plane"></i>
+          Submit</button>
+        <div class="success-message" id="successMessage">Form submitted
+          successfully!</div>
+      </form>
+    </div>
+
+    <script>
+  const fileDrop = document.getElementById('fileDrop');
+  const fileInput = document.getElementById('attachments');
+  const fileList = document.getElementById('fileList');
+
+  // Helper: show file names
+  function renderFileNames(files) {
+    if (!files || !files.length) {
+      fileList.innerHTML = '';
+      return;
+    }
+    fileList.innerHTML = Array.from(files)
+      .map(f => `<div>📄 ${f.name}</div>`)
+      .join('');
+  }
+
+  fileDrop.addEventListener('click', () => fileInput.click());
+
+  fileInput.addEventListener('change', () => {
+    renderFileNames(fileInput.files);
+  });
+
+  fileDrop.addEventListener('dragover', e => {
+    e.preventDefault();
+    fileDrop.style.background = '#e4f5fc';
+  });
+
+  fileDrop.addEventListener('dragleave', () => {
+    fileDrop.style.background = '#f0f8fc';
+  });
+
+  fileDrop.addEventListener('drop', e => {
+    e.preventDefault();
+    fileDrop.style.background = '#f0f8fc';
+
+    const dt = new DataTransfer();
+    for (let i = 0; i < e.dataTransfer.files.length; i++) {
+      dt.items.add(e.dataTransfer.files[i]);
+    }
+    fileInput.files = dt.files;
+
+    renderFileNames(fileInput.files);
+  });
+</script>
+
+  </body>
+</html>
+```
